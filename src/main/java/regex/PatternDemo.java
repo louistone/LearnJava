@@ -4,7 +4,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class PatternDemo {
-    public static final String  EXAMPLE_TEST = "This is my small example string which I'm going to use" +
+    public static final String  EXAMPLE_TEST = "This is my small example string which I'm going to use " +
             "for pattern matching.";
 
     public static void main(String[] args) {
@@ -16,5 +16,10 @@ public class PatternDemo {
             System.out.print(" End index: " + matcher.end() + " ");
             System.out.println(matcher.group());
         }
+
+        // replace space with new line character
+        Pattern replace = Pattern.compile("\\s+");
+        Matcher matcher2 = replace.matcher(EXAMPLE_TEST);
+        System.out.println(matcher2.replaceAll("\n"));
     }
 }
